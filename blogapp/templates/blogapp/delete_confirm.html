@@ -1,0 +1,18 @@
+{% extends 'blogapp/base.html' %}
+
+{% block content %}
+
+<div class="post">
+    <h2>Are you sure? ⚠️</h2>
+    <p>Do you really want to delete "<b>{{ post.title }}</b>"?</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+    </form>
+
+    <br>
+    <a href="/">Cancel</a>
+</div>
+
+{% endblock %}

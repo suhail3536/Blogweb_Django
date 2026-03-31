@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ post.title }}</title>
+</head>
+
+<body>
+
+    {% extends 'blogapp/base.html' %}
+
+    {% block content %}
+
+    <div class="post">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.content }}</p>
+        <a href="/">⬅ Back</a>
+        <br>
+        <a href="/"class="btn">⬅ Back</a>
+    </div>
+
+    {% endblock %}
+
+</body>
+
+</html>
