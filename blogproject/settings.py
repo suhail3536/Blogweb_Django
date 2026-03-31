@@ -5,6 +5,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-8piet=pu!9&k(=z%2z-x!on!g@!ybr46m+d5f&60e*u@31qc=4'
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
@@ -29,6 +31,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -99,3 +102,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 
+STATICFILES_DIRS = [
+    BASE_DIR / "blogapp/static",
+]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
