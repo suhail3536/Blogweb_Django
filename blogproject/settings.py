@@ -5,9 +5,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-8piet=pu!9&k(=z%2z-x!on!g@!ybr46m+d5f&60e*u@31qc=4'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 import os
@@ -99,7 +98,6 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_URL = 'static/'
 
 
 STATICFILES_DIRS = [
@@ -107,3 +105,5 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
